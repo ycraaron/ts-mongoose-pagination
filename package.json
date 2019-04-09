@@ -1,0 +1,10 @@
+{
+  "name": "ts-mongoose-paginate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Chengrui Yang",
+  "license": "Anti 996-License-1.0",
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  }
+}
