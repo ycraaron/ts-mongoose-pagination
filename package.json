@@ -1,5 +1,5 @@
 {
-  "name": "ts-mongoose-paginate",
+  "name": "mongoose-paginate-ts",
   "version": "1.0.0",
   "types": "src/types.ts",
   "author": "Aaron Chengrui Yang",
@@ -9,13 +9,13 @@
     "test": "jest --config jestconfig.json"
   },
   "dependencies": {
-    "mongoose": "^5.5.0"
+    "mongoose": "^5.5.8"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.12",
-    "@types/mongoose": "^5.3.25",
+    "@types/jest": "^24.0.13",
+    "@types/mongoose": "^5.5.1",
     "jest": "^24.8.0",
-    "prettier": "^1.16.4",
+    "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5"
   }
