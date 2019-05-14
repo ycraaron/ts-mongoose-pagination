@@ -1,7 +1,8 @@
 {
-  "name": "mongoose-paginate-ts",
+  "name": "ts-mongoose-paginate",
   "version": "1.0.0",
-  "types": "src/types.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Aaron Chengrui Yang",
   "license": "MIT",
   "scripts": {
