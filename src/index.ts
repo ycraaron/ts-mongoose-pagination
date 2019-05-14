@@ -6,18 +6,19 @@ import {
   Schema,
   PaginateModel,
   DocumentQuery
-} from 'mongoose';
+} from "mongoose";
 const defaultOptions: IPaginateDefaultOptions = {
   lean: false,
   perPage: 10,
-  projection: '',
-  select: ''
+  projection: "",
+  select: ""
 };
 
-function genMongooseQuery(
+export function genMongooseQuery(
   model: PaginateModel<any>,
   conditions: object,
-  options: IPaginateOptions & IPaginateDefaultOptions
+  options: IPaginateOptions & IPaginateDefaultOptions,
+  countDocs: number
 ): DocumentQuery<any, any> {
   let {
     collation,
@@ -35,17 +36,23 @@ function genMongooseQuery(
     .select(select)
     .sort(sort)
     .lean(lean);
-  if (typeof collation !== 'undefined') {
+  if (typeof collation !== "undefined") {
     if (Object.keys(collation).length > 0) {
       query.collation(collation);
     }
   }
 
-  if (typeof populate !== 'undefined') {
+  if (typeof populate !== "undefined") {
     query.populate(populate);
   }
+
+  const totalPages = Math.ceil(countDocs / perPage) || 1;
+
   // page === 'undefined' <=> no pagination
-  if (typeof page !== 'undefined') {
+  if (typeof page !== "undefined") {
+    if (page > totalPages) {
+      page = totalPages;
+    }
     let skip = (page - 1) * (perPage as number);
     query.skip(skip).limit(perPage);
   }
@@ -64,11 +71,10 @@ function genPagination(
     nextPage: null,
     perPage: perPage
   };
-  if (typeof page !== 'undefined') {
+  if (typeof page !== "undefined") {
     const totalPages = Math.ceil(count / perPage) || 1;
     pagination.totalPages = totalPages;
     pagination.page = page;
-
     if (page > totalPages) {
       page = totalPages;
     }
@@ -89,7 +95,7 @@ export async function paginate(
   options: IPaginateOptions & IPaginateDefaultOptions,
   callback: Function
 ) {
-  const isCallbackSpecified = typeof callback === 'function';
+  const isCallbackSpecified = typeof callback === "function";
 
   try {
     options = {
@@ -98,14 +104,13 @@ export async function paginate(
     };
 
     conditions = conditions || {};
-    const mongooseQuery = genMongooseQuery(this, conditions, options);
-    const docs = await mongooseQuery.exec();
     const count = await this.countDocuments(conditions).exec();
+    const mongooseQuery = genMongooseQuery(this, conditions, options, count);
+    const docs = await mongooseQuery.exec();
     const result: IPaginateResult<any> = {
       data: docs,
       pagination: genPagination(options, count)
     };
-
     return isCallbackSpecified ? callback(null, result) : result;
   } catch (err) {
     return isCallbackSpecified ? callback(err) : err;
