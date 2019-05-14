@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { User, Account, TUser } from "./fixtures";
 
-const dummmUserName = "Ann0316";
+const dummyUserName = "Ann0316";
 const dummyAccountName1 = "dummyAccount1";
 const dummyAccountName2 = "dummyAccount2";
 const dummyAccountName3 = "dummyAccount3";
@@ -13,7 +13,7 @@ const dummyAccountName8 = "dummyAccount8";
 const dummyAccountName9 = "dummyAccount9";
 const dummyAccountName10 = "dummyAccount10";
 const dummyAccountName11 = "dummyAccount11";
-const testUser = { username: dummmUserName };
+const testUser = { username: dummyUserName };
 const testAccounts = [
   {
     accountName: dummyAccountName1
@@ -133,7 +133,7 @@ test("paginate with populate", async done => {
     { page: 1, perPage: 5, populate: "user" }
   );
   expect(accounts.data.length).toBe(5);
-  expect((accounts.data[0].user as TUser).username).toBe(dummmUserName);
+  expect((accounts.data[0].user as TUser).username).toBe(dummyUserName);
   done();
 });
 
@@ -148,6 +148,6 @@ test("paginate with collation", async done => {
     }
   );
   expect(accounts.data.length).toBe(5);
-  expect((accounts.data[0].user as TUser).username).toBe(dummmUserName);
+  expect((accounts.data[0].user as TUser).username).toBe(dummyUserName);
   done();
 });
