@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { Schema, Document, PaginateModel } from "mongoose";
-import { mongoosePagination } from "..";
+import { mongoosePagination } from "../mongoose-pagination";
 const ObjectId = Schema.Types.ObjectId;
 
 export type TUser = IUser & Document;
