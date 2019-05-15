@@ -21,7 +21,7 @@ All files            |     96.3 |       70 |       80 |     96.3 |              
 
 > Typescript pagination plugin for [Mongoose](http://mongoosejs.com)
 
-[![NPM](https://nodei.co/npm/ts-mongoose-pagination.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mongoose-paginate-v2)
+[![NPM](https://nodei.co/npm/ts-mongoose-pagination.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ts-mongoose-pagination)
 
 ## Installation
 
