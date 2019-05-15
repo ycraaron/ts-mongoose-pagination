@@ -1,7 +1,7 @@
 {
   "name": "ts-mongoose-pagination",
   "description": "Typescript pagination plugin for mongoose",
-  "version": "1.2.0",
+  "version": "1.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Aaron Chengrui Yang",
