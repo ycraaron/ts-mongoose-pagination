@@ -1,10 +1,21 @@
 {
   "name": "ts-mongoose-pagination",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Aaron Chengrui Yang",
   "license": "MIT",
+  "keywords": [
+    "mongoose",
+    "paginate",
+    "pagination",
+    "paging",
+    "page",
+    "mongodb",
+    "nextpage",
+    "prevpage",
+    "paginator"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc",
