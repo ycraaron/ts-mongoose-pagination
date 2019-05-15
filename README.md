@@ -7,19 +7,7 @@
 [![Downloads](https://img.shields.io/npm/dm/ts-mongoose-pagination.svg)](https://img.shields.io/npm/dm/ts-mongoose-pagination.svg)
 [![HitCount](http://hits.dwyl.io/aravindnc/ts-mongoose-pagination.svg)](http://hits.dwyl.io/ycraaron/ts-mongoose-pagination)
 
-> Typescript pagination plugin for [Mongoose](http://mongoosejs.com)
-
-## Coverage (97.62%)
-
-```bash
----------------------|----------|----------|----------|----------|-------------------|
-File                 |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
----------------------|----------|----------|----------|----------|-------------------|
-All files            |     96.3 |       70 |       80 |     96.3 |                   |
- mongoose-pagination |    97.62 |       75 |      100 |    97.62 |                   |
-  pagination.ts      |    97.62 |       75 |      100 |    97.62 |               116 |
----------------------|----------|----------|----------|----------|-------------------|
-```
+Typescript pagination plugin for [Mongoose](http://mongoosejs.com)
 
 [![NPM](https://nodei.co/npm/ts-mongoose-pagination.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ts-mongoose-pagination)
 

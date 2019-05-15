@@ -1,10 +1,14 @@
 {
   "name": "ts-mongoose-pagination",
+  "description": "Typescript pagination plugin for mongoose",
   "version": "1.1.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Aaron Chengrui Yang",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "mongoose",
     "paginate",
@@ -18,18 +22,31 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc",
-    "test": "jest --config jestconfig.json src/tests"
+    "build": "yarn clean && tsc",
+    "test": "jest --config jestconfig.json src/tests",
+    "prepublishOnly": "yarn test && yarn build"
   },
-  "dependencies": {
-    "@types/mongoose": "^5.5.1",
-    "mongoose": "^5.5.8"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.13",
+    "@types/mongoose": "^5.5.1",
     "jest": "^24.8.0",
+    "mongoose": "^5.5.8",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
     "typescript": "^3.4.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ycraaron/ts-mongoose-pagination.git"
+  },
+  "peerDependencies": {
+    "@types/mongoose": "5.x",
+    "mongoose": "5.x"
+  },
+  "bugs": {
+    "url": "https://github.com/ycraaron/ts-mongoose-pagination/issues"
+  },
+  "homepage": "https://github.com/ycraaron/ts-mongoose-pagination#readme"
 }
