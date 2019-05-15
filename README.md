@@ -1,6 +1,6 @@
 # ts-mongoose-pagination
 
-[![npm version](https://img.shields.io/npm/v/ts-mongoose-pagination.svg)](https://www.npmjs.com/package/ts-mongoose-pagination)
+[![npm version](https://img.shields.io/npm/v/ts-mongoose-pagination.svg)](https://www.npmjs.com/package/ts-mongoose-pagination.svg)
 [![Dependency Status](https://david-dm.org/ycraaron/ts-mongoose-pagination.svg)](https://david-dm.org/ycraaron/ts-mongoose-pagination.svg)
 [![devDependency Status](https://david-dm.org/ycraaron/ts-mongoose-pagination/dev-status.svg)](https://david-dm.org/ycraaron/ts-mongoose-pagination/dev-status.svg)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/aravindnc/mongoose-paginate-v2/issues)
