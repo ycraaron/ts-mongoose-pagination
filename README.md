@@ -1,19 +1,38 @@
-# mongoose-paginate-ts
+# ts-mongoose-pagination
+
+[![npm version](https://img.shields.io/npm/v/ts-mongoose-pagination.svg)](https://www.npmjs.com/package/ts-mongoose-pagination)
+[![Dependency Status](https://david-dm.org/ycraaron/ts-mongoose-pagination.svg)](https://david-dm.org/ycraaron/ts-mongoose-pagination.svg)
+[![devDependency Status](https://david-dm.org/ycraaron/ts-mongoose-pagination/dev-status.svg)](https://david-dm.org/ycraaron/ts-mongoose-pagination/dev-status.svg)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/aravindnc/mongoose-paginate-v2/issues)
+[![Downloads](https://img.shields.io/npm/dm/ts-mongoose-pagination.svg)](https://img.shields.io/npm/dm/ts-mongoose-pagination.svg)
+[![HitCount](http://hits.dwyl.io/aravindnc/ts-mongoose-pagination.svg)](http://hits.dwyl.io/ycraaron/ts-mongoose-pagination)
+
+## Coverage (97.62%)
+
+```bash
+---------------------|----------|----------|----------|----------|-------------------|
+File                 |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+---------------------|----------|----------|----------|----------|-------------------|
+All files            |     96.3 |       70 |       80 |     96.3 |                   |
+ mongoose-pagination |    97.62 |       75 |      100 |    97.62 |                   |
+  pagination.ts      |    97.62 |       75 |      100 |    97.62 |               116 |
+---------------------|----------|----------|----------|----------|-------------------|
+```
 
 > Typescript pagination plugin for [Mongoose](http://mongoosejs.com)
 
-# **Note:** This plugin will only work with Node.js >= 4.2 and Mongoose >= 4.2
+[![NPM](https://nodei.co/npm/ts-mongoose-pagination.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/mongoose-paginate-v2)
 
 ## Installation
 
 ```sh
-npm install mongoose-paginate-ts
+npm install ts-mongoose-pagination
 ```
 
 or
 
 ```sh
-yarn mongoose-paginate-ts
+yarn add ts-mongoose-pagination
 ```
 
 ## Usage
@@ -21,15 +40,13 @@ yarn mongoose-paginate-ts
 Add plugin for a mongoose schema to inject a `paginate` method for pagination:
 
 ```ts
-import { mongoosePagination } from "mongoose-paginate-ts";
+import { mongoosePagination } from "ts-mongoose-pagination";
 
 const userSchema = new Schema({
   username: String,
   accounts: [{ type: ObjectId, ref: "Account" }]
 });
-
 userSchema.plugin(mongoosePagination);
-
 const User: PaginateModel<TUser> = mongoose.model("User", userSchema);
 
 //User.paginate()
@@ -49,7 +66,7 @@ const User: PaginateModel<TUser> = mongoose.model("User", userSchema);
   - `[perPage=10]` {Number}, number of docs per page, default is 10
 - `[callback(err, result)]` - If specified the callback is called once pagination results are retrieved or when an error has occurred
 
-**Return value**
+#### Return value
 
 Promise fulfilled with an IPaginateResult:
 
@@ -74,7 +91,7 @@ interface IPagination {
 
 ### Coverage
 
-```
+```bash
 --------------|----------|----------|----------|----------|-------------------|
 File          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 --------------|----------|----------|----------|----------|-------------------|
@@ -85,6 +102,9 @@ All files     |    96.43 |       70 |       80 |    96.43 |                   |
 ```
 
 ### Run tests
+
+1. Set up local mongo db
+2. Run:
 
 ```sh
 yarn
@@ -122,3 +142,9 @@ User.paginate(conditions, options).then(result => {
 ## License
 
 [MIT](LICENSE)
+
+## Acknowledgement
+
+Thanks for the insparation from the following mongoose pagination js implementation.
+[mongoose-paginate](https://github.com/edwardhotchkiss/mongoose-paginate)
+[mongoose-paginate-v2](https://www.npmjs.com/package/mongoose-paginate-v2)

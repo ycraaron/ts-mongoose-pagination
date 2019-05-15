@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json src/tests"
   },
   "dependencies": {
     "@types/mongoose": "^5.5.1",
