@@ -89,7 +89,7 @@ function genPagination(
   }
   return pagination;
 }
-export async function paginate(
+async function paginate(
   this: PaginateModel<any>,
   conditions: object,
   options: IPaginateOptions & IPaginateDefaultOptions,

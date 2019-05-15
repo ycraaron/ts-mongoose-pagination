@@ -1,6 +1,5 @@
-/// <reference types="mongoose" />
 declare module "mongoose" {
-  interface IPaginateOptions {
+  export interface IPaginateOptions {
     select?: Object | string;
     sort?: Object | string;
     collation?: CollationOptions;
@@ -10,19 +9,19 @@ declare module "mongoose" {
     page?: number;
     perPage?: number;
   }
-  interface IPaginateDefaultOptions {
+  export interface IPaginateDefaultOptions {
     select: string;
     projection: string;
     lean: boolean;
     perPage: number;
   }
 
-  interface IPaginateResult<T> {
+  export interface IPaginateResult<T> {
     data: T[];
     pagination: IPagination;
   }
 
-  interface IPagination {
+  export interface IPagination {
     hasPrevPage: boolean;
     hasNextPage: boolean;
     prevPage: number | null;
@@ -32,7 +31,7 @@ declare module "mongoose" {
     totalPages?: number;
   }
 
-  interface PaginateModel<T extends Document> extends Model<T> {
+  export interface PaginateModel<T extends Document> extends Model<T> {
     paginate(
       query?: object,
       options?: IPaginateOptions,
@@ -40,7 +39,7 @@ declare module "mongoose" {
     ): Promise<IPaginateResult<T>>;
   }
 
-  function model(
+  export function model(
     name: string,
     schema?: Schema,
     collection?: string,
@@ -48,4 +47,4 @@ declare module "mongoose" {
   ): PaginateModel<any>;
 }
 
-export * from "./mongoose-pagination";
+export * from "./mongoose-pagination/pagination";
