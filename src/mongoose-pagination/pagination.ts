@@ -7,6 +7,7 @@ import {
   PaginateModel,
   DocumentQuery
 } from "mongoose";
+
 const defaultOptions: IPaginateDefaultOptions = {
   lean: false,
   perPage: 10,
@@ -89,6 +90,7 @@ function genPagination(
   }
   return pagination;
 }
+
 async function paginate(
   this: PaginateModel<any>,
   conditions: object,
