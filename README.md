@@ -139,12 +139,30 @@ User.paginate(conditions, options).then(result => {
 });
 ```
 
-## License
+## Explaination for some choices made
 
-[MIT](LICENSE)
+1. Why remove the offset in the options?
+   Think about the scenario when we use offset and limit(refer to the implementation in [mongoose-paginate](https://github.com/edwardhotchkiss/mongoose-paginate/blob/d06a7d43ac2c404ef522e7cdc52d3de5eebd52e3/index.js#L29))
+
+   ```ts
+   User.paginate(conditions, {offset:50, limit: 10}).then(result => {
+   // ...
+   ```
+
+   why not just use:
+
+   ```ts
+   User.find(conditions, { offset: 50, limit: 10 }).then(result => {
+     // ...
+   });
+   ```
 
 ## Acknowledgement
 
 Thanks for the insparation from the following mongoose pagination js implementation.
 [mongoose-paginate](https://github.com/edwardhotchkiss/mongoose-paginate)
 [mongoose-paginate-v2](https://www.npmjs.com/package/mongoose-paginate-v2)
+
+## License
+
+[MIT](LICENSE)
