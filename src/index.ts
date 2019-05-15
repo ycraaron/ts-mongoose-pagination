@@ -1,3 +1,4 @@
+/// <reference types="mongoose" />
 declare module "mongoose" {
   interface IPaginateOptions {
     select?: Object | string;
