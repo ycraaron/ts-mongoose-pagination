@@ -6,15 +6,16 @@
   "author": "Aaron Chengrui Yang",
   "license": "MIT",
   "scripts": {
-    "build-ts": "tsc",
+    "clean": "rm -rf dist",
+    "build": "tsc",
     "test": "jest --config jestconfig.json"
   },
   "dependencies": {
-    "mongoose": "^5.5.8"
+    "mongoose": "^5.5.8",
+    "@types/mongoose": "^5.5.1"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",
-    "@types/mongoose": "^5.5.1",
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
     "ts-jest": "^24.0.2",

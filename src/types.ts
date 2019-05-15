@@ -1,4 +1,4 @@
-declare module 'mongoose' {
+declare module "mongoose" {
   interface IPaginateOptions {
     select?: Object | string;
     sort?: Object | string;
@@ -47,6 +47,6 @@ declare module 'mongoose' {
   ): PaginateModel<any>;
 }
 
-import mongoose = require('mongoose');
+import mongoose = require("mongoose");
 declare function _(schema: mongoose.Schema): void;
 export = _;
