@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:7.10
-      - image: circleci/mongo:3.4.4
+      - image: circleci/node:lts
+      - image: circleci/mongo:latest
 
     working_directory: ~/repo
 
